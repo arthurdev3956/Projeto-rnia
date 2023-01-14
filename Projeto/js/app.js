@@ -77,7 +77,7 @@ form.addEventListener("submit", (event) => { //evento de submit que salva os dad
 });
 
 const createTask = async (tasks) => { //função que cria a tarefa
-  await fetch("http://localhost:3000/Posts", {
+  await fetch("json-server-production-185b.up.railway.app/Posts", {
     method: "POST",
     headers: {
       Accept: "application/json, text/plain, */*",
