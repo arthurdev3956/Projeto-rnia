@@ -25,12 +25,12 @@ const closeAlert = () => { //função para fechar o modal de delete
   close.style.display = "none";
 };
 const getTasks = async () => { //função para buscar a lista de tarefa na api
-  const apiResponse = await fetch("json-server-production-185b.up.railway.app/Posts");
+  const apiResponse = await fetch("json-server-production-185b.up.railway.app");
   const resultTask = await apiResponse.json();
   return resultTask;
 };
 const getTask = async (id) => { //função para buscar uma tarefa específica na ap
-  const apiResponse = await fetch(`json-server-production-185b.up.railway.app/Posts/${id}`);
+  const apiResponse = await fetch(`json-server-production-185b.up.railway.app/${id}`);
   const resultTasks = await apiResponse.json();
   return resultTasks;
 };
@@ -77,7 +77,7 @@ form.addEventListener("submit", (event) => { //evento de submit que salva os dad
 });
 
 const createTask = async (tasks) => { //função que cria a tarefa
-  await fetch("json-server-production-185b.up.railway.app/Posts", {
+  await fetch("json-server-production-185b.up.railway.app", {
     method: "POST",
     headers: {
       Accept: "application/json, text/plain, */*",
@@ -87,7 +87,7 @@ const createTask = async (tasks) => { //função que cria a tarefa
   });
 };
 const updateTask = async (id, tasks) => { //essa função é para editar a tarefa
-  await fetch(`json-server-production-185b.up.railway.app/Posts/${id}`, {
+  await fetch(`json-server-production-185b.up.railway.app/${id}`, {
     method: "PUT",
     headers: {
       Accept: "application/json, text/plain, */*",
@@ -99,7 +99,7 @@ const updateTask = async (id, tasks) => { //essa função é para editar a taref
 };
 const deleteTasks = async (id) => { //funçao para deletar tarefa
 
-  await fetch(`json-server-production-185b.up.railway.app/Posts/${id}`, {
+  await fetch(`json-server-production-185b.up.railway.app/${id}`, {
     method: "DELETE",
   });
   closeAlert();
